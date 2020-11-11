@@ -1,0 +1,67 @@
+
+CREATE TABLE tblVerkefni{
+	ID SERIAL NOT NULL PRIMARY KEY, 
+	Verknumer INT NOT NULL,
+	Tilefni VARCHAR(250) NOT NULL, 
+    Stadur VARCHAR(200) NOT NULL, 
+    Dagur VARCHAR(200) NOT NULL, 
+    Byrjunartima VARCHAR(200) NOT NULL,
+    Endurunartima VARCHAR(200) NOT NULL, 
+    Delete_Tilefni BOOLEAN NOT NULL 
+};
+
+INSERT INTO tblVidskiptavinur(Verknumer, Tilefni, Stadur, Dagur, Byrjunartima, Endurunartima,Delete_Tilefni) VALUES (0001,"Fundur á Skaginn3X með Árna", "Ármúli 1", "23.02.2020", "14:40", "15:34", 0);
+
+CREATE TABLE tblTulkur{
+	ID SERIAL NOT NULL PRIMARY KEY,
+	KT TEXT NOT NULL,
+	Nafn VARCHAR(200) NOT NULL,
+	Simi TEXT NOT NULL,
+	Netfang TEXT NOT NULL,
+	Delete_KT BOOLEAN NOT NULL
+};
+
+CREATE TABLE tblVidskiptavinur{
+	ID SERIAL NOT NULL PRIMARY KEY,
+	KT TEXT NOT NULL,
+	Nafn VARCHAR(200) NOT NULL,
+	Simi TEXT NOT NULL,
+	Netfang TEXT NOT NULL,
+    Delete_KT BOOLEAN NOT NULL
+};
+
+CREATE TABLE tblGreidsla{
+	ID SERIAL NOT NULL PRIMARY KEY,
+	Tilefni VARCHAR(200) NOT NULL,
+	Upphaed TEXT,
+	Delete_Tilefni BOOLEAN NOT NULL,
+	FOREIGN KEY (ID) REFERENCES tblVerkefni(ID),
+};
+
+CREATE TABLE tblPanta{
+	ID SERIAL NOT NULL PRIMARY KEY,
+	KT TEXT NOT NULL,
+	Vettvangur TEXT NOT NULL,
+	Delete_KT BOOLEAN NOT NULL,
+	FOREIGN KEY (ID) REFERENCES tblVerkefni(ID),
+	FOREIGN KEY (KT) REFERENCES tblVidskiptavinur(KT),
+};
+
+CREATE TABLE tblVinna{
+	ID SERIAL NOT NULL PRIMARY KEY,
+	KT TEXT NOT NULL,
+    Vinna INT NOT NULL,
+    Maeta INT NOT NULL,
+    Fell INT NOT NULL, 
+    Vettvangur TEXT NOT NULL,
+    Delete_KT BOOLEAN NOT NULL,
+    FOREIGN KEY (ID) REFERENCES tblVerkefni(ID),
+    FOREIGN KEY (KT) REFERENCES tblTulkur(KT),
+};
+
+CREATE TABLE Notandi{
+	ID SERIAL NOT NULL,
+	Username VARCHAR(45) NOT NULL, 
+	Password VARCHAR(440) NOT NULL, 
+	PRIMARY KEY (Username)
+};

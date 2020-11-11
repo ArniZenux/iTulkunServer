@@ -1,0 +1,31 @@
+{
+  "name": "itulkun",
+  "version": "1.0.0",
+  "description": "iTúlkun er túlkaþjónusta á vefum og er fyrir innra hússins.",
+  "main": "server.js",
+  "dependencies": {
+    "bootstrap": "^4.5.2",
+    "ejs": "^3.1.3",
+    "express": "^4.17.1",
+    "fs": "0.0.1-security",
+    "md5": "^2.2.1",
+    "node-pre-gyp": "^0.15.0",
+    "sqlite3": "^5.0.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  
+  "repository": {
+    "type": "git",
+    "url": "git+https://gitlab.com/Arni14/itulkun.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://gitlab.com/Arni14/itulkun/issues"
+  },
+  "homepage": "https://gitlab.com/Arni14/itulkun#readme"
+}

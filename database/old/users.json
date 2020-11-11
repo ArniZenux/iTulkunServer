@@ -1,0 +1,12 @@
+{
+  "1" : {
+    "name":"king arthur",
+    "password": "password1",
+    "id": 1
+   },
+  "2": {
+    "name":"Mamma",
+    "password": "ord",
+    "id": 2
+  }
+}
